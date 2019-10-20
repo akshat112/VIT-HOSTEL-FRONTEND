@@ -1,6 +1,5 @@
 <div class="form">
 
-{{loginForm.value | json}}
 
   <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
   <mat-card>
@@ -45,7 +44,8 @@
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions style="text-align: center;">
-        <button mat-raised-button color="primary">Login</button>
+        <button mat-raised-button color="primary" *ngIf="!showSpinner">Login</button>
+        <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner" style="margin: 10 auto;"></mat-progress-spinner>
     </mat-card-actions>
   </mat-card>
   </form>

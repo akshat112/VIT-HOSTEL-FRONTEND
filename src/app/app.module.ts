@@ -8,14 +8,21 @@ import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MakeRequestComponent } from './make-request/make-request.component';
+import { AuthGuard } from './auth.guard';
+import { LoginService } from './services/login.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { CleanRequestService } from './services/clean-request.service';
+import { CompleteCleanRequestService } from './services/complete-clean-request.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    MakeRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,13 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard, CleanRequestService, CompleteCleanRequestService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

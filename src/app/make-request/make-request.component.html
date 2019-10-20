@@ -1,0 +1,39 @@
+<h3 style="text-align: center;">STUDENT SERVICE PORTAL</h3>
+
+<div class="row" style="margin-top: 20px; text-align: center !important;">
+  <div class="col m6">
+    <mat-card>
+      <mat-card-title>MAKE A REQUEST</mat-card-title> <hr>
+      <div *ngIf="!reqAlreadyPresent; else already">
+        <p>Click the button below to place a new room cleaning request.</p>
+        <button mat-raised-button color="primary" (click)="cleanRequest()">Request Cleaning</button> <br>
+        <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner" style="margin: 10 auto;"></mat-progress-spinner>
+        <!-- <h5 *ngIf="!!msg">{{msg}}</h5> -->
+      </div>
+
+    <ng-template #already>
+        <div>
+          <p><b>PENDING REQUEST DETAILS</b></p>
+          <p>Name: {{profileData.data.name}}</p>
+          <p>Register no.: {{profileData.data.registerNumber}}</p>
+          <p>Room: {{profileData.data.roomId.block}} - {{profileData.data.roomId.num}}</p>
+          <p>OTP: {{profileData.data.roomId.cleanRequestId.token}}</p>
+        </div>
+    </ng-template>
+
+    </mat-card>
+  </div>
+  <div class="col m6">
+    <mat-card>
+      <mat-card-title>
+        COMPLETE REQUEST
+      </mat-card-title> <hr>
+      <mat-checkbox [(ngModel)]="tipPaid">I paid some tip amount to the worker</mat-checkbox> <br> <br>
+        <button mat-raised-button color="primary" (click)="requestComplete()">Complete Clean Request</button>
+        <!-- <p *ngIf="!!completedMsg"><b>{{completedMsg}}</b></p> -->
+        <div *ngIf="showSpinner2">
+          <mat-progress-spinner mode="indeterminate" style="margin: 10px auto;"></mat-progress-spinner>
+        </div>
+    </mat-card>
+  </div>
+</div>

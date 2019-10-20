@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   SERVER: 'https://vithostel.herokuapp.com'
+  // SERVER: 'http://172.17.57.110:8080'
 };
 
 /*
