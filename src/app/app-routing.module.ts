@@ -8,6 +8,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { SupervisorLoginComponent } from './supervisor-login/supervisor-login.component';
 import { PendingCleaningRequestsComponent } from './pending-cleaning-requests/pending-cleaning-requests.component';
+import { AllComplaintsComponent } from './all-complaints/all-complaints.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'student/feedback', component: FeedbackComponent, canActivate: [AuthGuard]},
   {path: 'student/complaint', component: ComplaintsComponent, canActivate: [AuthGuard]},
   {path: 'supervisor/login', component: SupervisorLoginComponent},
-  {path: 'supervisor/clean/pending', component: PendingCleaningRequestsComponent, canActivate: [AuthGuard]}
+  {path: 'supervisor/clean/pending', component: PendingCleaningRequestsComponent, canActivate: [AuthGuard]},
+  {path: 'supervisor/complaints/all', component: AllComplaintsComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

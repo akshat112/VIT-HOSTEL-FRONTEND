@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Completion details</h1>
+<div mat-dialog-content>
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="data.token" placeholder="Token">
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="data.worker" placeholder="Worker name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions style="text-align: center;">
+  <button mat-button mat-dialog-close>No Thanks</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

@@ -19,6 +19,8 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { SupervisorLoginComponent } from './supervisor-login/supervisor-login.component';
 import { PendingCleaningRequestsComponent } from './pending-cleaning-requests/pending-cleaning-requests.component';
+import { CleanCompleteDialogComponent } from './clean-complete-dialog/clean-complete-dialog.component';
+import { AllComplaintsComponent } from './all-complaints/all-complaints.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { PendingCleaningRequestsComponent } from './pending-cleaning-requests/pe
     FeedbackComponent,
     ComplaintsComponent,
     SupervisorLoginComponent,
-    PendingCleaningRequestsComponent
+    PendingCleaningRequestsComponent,
+    CleanCompleteDialogComponent,
+    AllComplaintsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,9 @@ import { PendingCleaningRequestsComponent } from './pending-cleaning-requests/pe
     multi: true
   }
 ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CleanCompleteDialogComponent
+]
 })
 export class AppModule { }

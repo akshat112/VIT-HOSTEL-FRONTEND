@@ -1,34 +1,37 @@
 <div class="row" style="margin-top: 20px; text-align: center;">
-  <div class="col m4">
+  <div class="col m12">
     <mat-card>
       <mat-card-title>
-        All pending requests
+        Pending complaints
       </mat-card-title> <hr>
-      <table *ngIf="hasData1">
+      <table *ngIf="hasData">
         <tr>
           <th style="text-align: center;">Block</th>
           <th style="text-align: center;">Room No.</th>
+          <th style="text-align: center;">Type</th>
+          <th style="text-align: center;">Description</th>
+          <th style="text-align: center;">Action</th>
         </tr>
         <tr *ngFor="let pending of allPending">
           <td style="text-align: center;">{{pending.roomNum.block}}</td>
           <td style="text-align: center;">{{pending.roomNum.num}}</td>
+          <td style="text-align: center;">{{pending.type}}</td>
+          <td style="text-align: center;">{{pending.content}}</td>
+          <td style="text-align: center;"><button mat-raised-button (click)="resolved(pending.uid)">Resolved</button></td>
         </tr>
       </table>
-      <h4 *ngIf="!hasData1">Nothing to display</h4>
+      <h4 *ngIf="!hasData">No complaints to show</h4>
       <div *ngIf="showSpinner1">
         <mat-progress-spinner mode="indeterminate" style="margin: 10px auto;"></mat-progress-spinner>
       </div>
     </mat-card>
   </div>
-  <div class="col m8">
+  <!-- <div class="col m6">
     <mat-card>
       <mat-card-title>
         Completed by students
       </mat-card-title> <hr>
-      <!-- <div>
-        <button mat-raised-button (click)="openModal()">Complete a request</button>
-      </div> -->
-      <table *ngIf="hasData2">
+      <table>
         <tr>
           <th style="text-align: center;">Block</th>
           <th style="text-align: center;">Room no.</th>
@@ -44,10 +47,9 @@
           <td style="text-align: center;"><img src="../../assets/tick-icon.png" width="20" style="cursor: pointer;" (click)="openModal()"></td>
         </tr>
       </table>
-      <h4 *ngIf="!hasData2">Nothing to display</h4>
       <div *ngIf="showSpinner2">
         <mat-progress-spinner mode="indeterminate" style="margin: 10px auto;"></mat-progress-spinner>
       </div>
     </mat-card>
-  </div>
+  </div> -->
 </div>

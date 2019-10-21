@@ -16,12 +16,14 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatTableModule} from '@angular/material/table';
 const MaterialComponents = [
   MatNativeDateModule,
   MatDatepickerModule,
   MatIconModule,
   MatButtonModule,
   MatCheckboxModule,
+  MatTableModule,
   MatToolbarModule,
   MatCardModule,
   MatFormFieldModule,

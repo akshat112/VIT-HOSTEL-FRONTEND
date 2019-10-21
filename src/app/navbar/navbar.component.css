@@ -9,4 +9,8 @@ a{
   padding: 0 20px;
   cursor: pointer;
   font-size: 15px;
+  transition-duration: 300ms;
+}
+a:hover{
+  color: deeppink;
 }

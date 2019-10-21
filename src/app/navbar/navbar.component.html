@@ -3,11 +3,15 @@
     <img src="../../assets/vit_white.png" width="195">
   </div>
   <div>
-    <a *ngIf="!_auth.isLoggedIn()" [routerLink]="['/']">Student Login</a>
-    <a *ngIf="!_auth.isLoggedIn()" [routerLink]="['/supervisor/login']">Supervisor Login</a>
+    <a *ngIf="!_auth.isLoggedIn() && !_superAuth.isLoggedIn()" [routerLink]="['/']">Student Login</a>
+    <a *ngIf="!_auth.isLoggedIn() && !_superAuth.isLoggedIn()" [routerLink]="['/supervisor/login']">Supervisor Login</a>
     <a *ngIf="_auth.isLoggedIn()" [routerLink]="['/cleanRequest']" routerLinkActive="router-link-active" >Clean request</a>
     <a *ngIf="_auth.isLoggedIn()" [routerLink]="['/student/complaint']" routerLinkActive="router-link-active" >Complaints</a>
     <a *ngIf="_auth.isLoggedIn()" [routerLink]="['/student/feedback']" routerLinkActive="router-link-active" >Feedback</a>
     <a *ngIf="_auth.isLoggedIn()" (click)="logout()">Logout</a>
+
+    <a *ngIf="_superAuth.isLoggedIn()" [routerLink]="['/supervisor/clean/pending']" routerLinkActive="router-link-active">Pending requests</a>
+    <a *ngIf="_superAuth.isLoggedIn()" [routerLink]="['/supervisor/complaints/all']" routerLinkActive="router-link-active">All complaints</a>
+    <a *ngIf="_superAuth.isLoggedIn()" (click)="superLogout()">Logout</a>
   </div>
 </mat-toolbar>

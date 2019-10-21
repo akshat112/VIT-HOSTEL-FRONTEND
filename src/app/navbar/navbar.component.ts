@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { SupervisorLoginService } from '../services/supervisor-login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _auth: LoginService, private router: Router) { }
+  constructor(private _auth: LoginService, private router: Router, private _superAuth: SupervisorLoginService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,10 @@ export class NavbarComponent implements OnInit {
   logout(){
     localStorage.removeItem('token');
     this.router.navigate(['/']);
+  }
+  superLogout(){
+    localStorage.removeItem('supervisor-token');
+    this.router.navigate(['/supervisor/login']);
   }
 
 }
