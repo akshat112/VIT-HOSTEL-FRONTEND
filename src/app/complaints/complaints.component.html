@@ -1,0 +1,42 @@
+<div style="text-align: center; width: 70%; margin: 20px auto;">
+  <mat-card>
+    <mat-card-title>
+      <h4>HOSTEL COMPLAINTS</h4> <hr> <br>
+    </mat-card-title>
+    <div *ngIf="!postedFlag; else posted">
+      <mat-card-content>
+        <h6>Complaint Regarding: </h6> <br>
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="complaintData.type">
+          <mat-radio-button value="AC">AC</mat-radio-button>
+          <mat-radio-button value="Lights">Lights</mat-radio-button>
+          <mat-radio-button value="Fans">Fans</mat-radio-button>
+          <mat-radio-button value="Furniture">Furniture</mat-radio-button>
+          <mat-radio-button value="Washroom">Washroom</mat-radio-button>
+          <mat-radio-button value="Others">Others</mat-radio-button>
+        </mat-radio-group> <br> <br>
+         <!-- <h6>Complaint Description: </h6> <br> -->
+         <div style="width: 100%;">
+            <mat-form-field style="width: 100%;">
+              <textarea matInput placeholder="Write a detailed description about your complaint" [(ngModel)]="complaintData.content"></textarea>
+            </mat-form-field>
+         </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="complaint()">Submit</button>
+      </mat-card-actions>
+    </div>
+    <ng-template #posted>
+      <div>
+        <mat-card-content *ngIf="successStatus">
+          <img src="../../assets/tick.png" width="125"> <br>
+          <h4>Complaint Registered Successfully</h4>
+        </mat-card-content>
+        <mat-card-content *ngIf="!successStatus">
+          <img src="../../assets/cross.png" width="125"> <br>
+          <h4>Error in posting complaint</h4>
+        </mat-card-content>
+      </div>
+      <button mat-button (click)="back()">Go back</button>
+    </ng-template>
+  </mat-card>
+</div>

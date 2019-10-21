@@ -15,6 +15,9 @@ import { LoginService } from './services/login.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { CleanRequestService } from './services/clean-request.service';
 import { CompleteCleanRequestService } from './services/complete-clean-request.service';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
+import { SupervisorLoginComponent } from './supervisor-login/supervisor-login.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { CompleteCleanRequestService } from './services/complete-clean-request.s
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    MakeRequestComponent
+    MakeRequestComponent,
+    FeedbackComponent,
+    ComplaintsComponent,
+    SupervisorLoginComponent
   ],
   imports: [
     BrowserModule,

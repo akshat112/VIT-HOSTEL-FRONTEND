@@ -37,7 +37,7 @@
         </div>
       </div>
       <mat-form-field>
-        <input matInput placeholder="Number of beds in room" name="bed" [(ngModel)]="formData.bed">
+        <input matInput placeholder="Number of beds in room" name="bed" type="text"  autocomplete="off" [(ngModel)]="formData.bed">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Room Number" name="num" [(ngModel)]="formData.num">
@@ -45,7 +45,7 @@
     </mat-card-content>
     <mat-card-actions style="text-align: center;">
         <button mat-raised-button color="primary" *ngIf="!showSpinner">Login</button>
-        <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner" style="margin: 10 auto;"></mat-progress-spinner>
+        <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner" style="margin: 10px auto;"></mat-progress-spinner>
     </mat-card-actions>
   </mat-card>
   </form>
