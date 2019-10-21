@@ -1,7 +1,8 @@
 <mat-toolbar color="primary" class="navbar">
   <div>VIT HOSTEL SERVICES</div>
   <div>
-    <span>Login</span>
-    <span>About</span>
+    <a *ngIf="!_auth.isLoggedIn()">Login</a>
+    <a *ngIf="_auth.isLoggedIn()" (click)="logout()">Logout</a>
+    <a>About</a>
   </div>
 </mat-toolbar>

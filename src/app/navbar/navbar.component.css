@@ -4,3 +4,8 @@
 span{
   padding-right: 1rem;
 }
+a{
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
+}
