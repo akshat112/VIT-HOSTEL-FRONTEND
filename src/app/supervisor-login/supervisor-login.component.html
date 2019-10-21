@@ -1,1 +1,45 @@
-<p>supervisor-login works!</p>
+<div class="form">
+
+
+  <form>
+  <mat-card>
+      <mat-card-title>
+        Supervisor Login
+      </mat-card-title>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Name" name="name" [(ngModel)]="formData.name">
+      </mat-form-field>
+
+      <div class="row">
+        <div class="col m6">
+          <mat-form-field>
+              <mat-select placeholder="Hostel Type" [(ngModel)]="formData.type" name="type">
+                <mat-option value="boys">Men's</mat-option>
+                <mat-option value="girls">Ladies</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col m6">
+          <mat-form-field>
+              <mat-select placeholder="Block" name="block" [(ngModel)]="formData.block">
+                <mat-option value="A">A</mat-option>
+                <mat-option value="B">B</mat-option>
+                <mat-option value="C">C</mat-option>
+                <mat-option value="D">D</mat-option>
+                <mat-option value="Q">Q</mat-option>
+                <mat-option value="N">N</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;">
+        <button mat-raised-button color="primary" *ngIf="!showSpinner" (click)="submit()">Login</button>
+        <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner" style="margin: 10px auto;"></mat-progress-spinner>
+    </mat-card-actions>
+  </mat-card>
+  </form>
+</div>
+
+

@@ -1,7 +1,10 @@
 <mat-toolbar color="primary" class="navbar">
-  <div>VIT HOSTEL SERVICES</div>
   <div>
-    <a *ngIf="!_auth.isLoggedIn()">Login</a>
+    <img src="../../assets/vit_white.png" width="195">
+  </div>
+  <div>
+    <a *ngIf="!_auth.isLoggedIn()" [routerLink]="['/']">Student Login</a>
+    <a *ngIf="!_auth.isLoggedIn()" [routerLink]="['/supervisor/login']">Supervisor Login</a>
     <a *ngIf="_auth.isLoggedIn()" [routerLink]="['/cleanRequest']" routerLinkActive="router-link-active" >Clean request</a>
     <a *ngIf="_auth.isLoggedIn()" [routerLink]="['/student/complaint']" routerLinkActive="router-link-active" >Complaints</a>
     <a *ngIf="_auth.isLoggedIn()" [routerLink]="['/student/feedback']" routerLinkActive="router-link-active" >Feedback</a>

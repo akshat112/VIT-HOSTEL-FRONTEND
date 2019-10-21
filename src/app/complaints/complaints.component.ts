@@ -6,6 +6,8 @@ import { ComplaintsService } from '../services/complaints.service';
   templateUrl: './complaints.component.html',
   styleUrls: ['./complaints.component.css']
 })
+
+
 export class ComplaintsComponent implements OnInit {
 
   constructor(private _complaint: ComplaintsService) { }

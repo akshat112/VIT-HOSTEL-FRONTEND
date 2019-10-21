@@ -18,6 +18,7 @@ import { CompleteCleanRequestService } from './services/complete-clean-request.s
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { SupervisorLoginComponent } from './supervisor-login/supervisor-login.component';
+import { PendingCleaningRequestsComponent } from './pending-cleaning-requests/pending-cleaning-requests.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SupervisorLoginComponent } from './supervisor-login/supervisor-login.co
     MakeRequestComponent,
     FeedbackComponent,
     ComplaintsComponent,
-    SupervisorLoginComponent
+    SupervisorLoginComponent,
+    PendingCleaningRequestsComponent
   ],
   imports: [
     BrowserModule,

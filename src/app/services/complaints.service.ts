@@ -10,6 +10,6 @@ export class ComplaintsService {
   constructor(private _http: HttpClient) { }
   url = environment.SERVER + '/students/report/complain'
   postComplaint(data){
-    return this._http.post(this.url, data);
+    return this._http.post<any>(this.url, data);
   }
 }
