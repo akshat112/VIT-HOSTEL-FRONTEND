@@ -23,7 +23,7 @@ export class PendingCleaningRequestsComponent implements OnInit {
   cleanCompleteData = {
     token: '',
     worker: '',
-  }
+  };
 
   ngOnInit() {
     // All pending
@@ -33,6 +33,7 @@ export class PendingCleaningRequestsComponent implements OnInit {
         if (data.msg == 'OK') {
           this.hasData1 = true;
           this.allPending = data.data;
+          console.log('refetch');
           // console.log(data.data);
         } else {
           this._snackBar.open('Cannot fetch pending requests', 'Ok', {
@@ -70,20 +71,20 @@ export class PendingCleaningRequestsComponent implements OnInit {
       width: '350px'
     });
     dialogRef.afterClosed().subscribe(result => {
-    console.log("Dialog was closed");
+    console.log('Dialog was closed');
     console.log(result);
     this.cleanCompleteData.token = result.token;
     this.cleanCompleteData.worker = result.worker;
 
-    if(!!result.token && !!result.worker){
+    if (!!result.token && !!result.worker) {
       // console.log("Succcess")
       this._supervisor.confirmedBySupervisor(this.cleanCompleteData).subscribe(
         data => {
-          console.log("Sup: ")
-          console.log(data)
-          if(data.msg == 'OK'){
-            this.ngOnInit()
-          } else{
+          console.log('Sup: ');
+          console.log(data);
+          if (data.msg == 'OK') {
+            this.ngOnInit();
+          } else {
             this._snackBar.open('Cannot complete request', 'Ok', {
               duration: 3000
             });
@@ -94,9 +95,9 @@ export class PendingCleaningRequestsComponent implements OnInit {
               duration: 3000
             });
         }
-      )
-    } else{
-      console.log("Fail")
+      );
+    } else {
+      console.log('Fail');
     }
     });
     }
