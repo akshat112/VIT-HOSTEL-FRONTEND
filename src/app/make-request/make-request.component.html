@@ -28,7 +28,7 @@
       <mat-card-title>
         COMPLETE REQUEST
       </mat-card-title> <hr>
-      <mat-checkbox [(ngModel)]="tipPaid">I paid some tip amount to the worker</mat-checkbox> <br> <br>
+      <mat-checkbox [(ngModel)]="completeData.bribe">I paid some tip amount to the worker</mat-checkbox> <br> <br>
         <button mat-raised-button color="primary" (click)="requestComplete()">Complete Clean Request</button>
         <!-- <p *ngIf="!!completedMsg"><b>{{completedMsg}}</b></p> -->
         <div *ngIf="showSpinner2">

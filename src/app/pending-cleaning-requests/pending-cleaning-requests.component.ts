@@ -33,7 +33,7 @@ export class PendingCleaningRequestsComponent implements OnInit {
         if (data.msg == 'OK') {
           this.hasData1 = true;
           this.allPending = data.data;
-          console.log(data.data);
+          // console.log(data.data);
         } else {
           this._snackBar.open('Cannot fetch pending requests', 'Ok', {
           duration: 3000
@@ -77,8 +77,9 @@ export class PendingCleaningRequestsComponent implements OnInit {
 
     if(!!result.token && !!result.worker){
       // console.log("Succcess")
-      this._supervisor.confirmedBySupervisor(result).subscribe(
+      this._supervisor.confirmedBySupervisor(this.cleanCompleteData).subscribe(
         data => {
+          console.log("Sup: ")
           console.log(data)
           if(data.msg == 'OK'){
             this.ngOnInit()

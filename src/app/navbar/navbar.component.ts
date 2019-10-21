@@ -10,7 +10,7 @@ import { SupervisorLoginService } from '../services/supervisor-login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _auth: LoginService, private router: Router, private _superAuth: SupervisorLoginService) { }
+  constructor(public _auth: LoginService, public router: Router, public _superAuth: SupervisorLoginService) { }
 
   ngOnInit() {
   }
