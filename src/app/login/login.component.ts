@@ -38,7 +38,9 @@ onSubmit(){
       this.showSpinner = false;
       if(data.msg == 'OK'){
         localStorage.setItem('token',data.data.session)
-        this.router.navigate(['/cleanRequest']);
+        setTimeout(() => {
+          this.router.navigate(['/cleanRequest']);
+        }, 500)
       }
       else{
         this.showSpinner = false;
