@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class CleanRequestService {
 
   constructor(private _http: HttpClient) { }
-  url = environment.SERVER + "/students/clean/request/";
+  url = environment.SERVER + "/students/clean/request?token=" + localStorage.getItem('token');
   makeCleanRequest(){
     return this._http.get<any>(this.url);
   }
