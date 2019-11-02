@@ -7,7 +7,7 @@ export class TokenInterceptorService implements HttpInterceptor{
 
   intercept(req, next){
     let tokenizedReq = req.clone({
-      withCredentials: true
+      // withCredentials: true
     })
     return next.handle(tokenizedReq)
   }
