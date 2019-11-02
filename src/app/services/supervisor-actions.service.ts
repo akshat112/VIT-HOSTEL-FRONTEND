@@ -9,11 +9,11 @@ export class SupervisorActionsService {
 
   constructor(private _http: HttpClient) { }
 
-  allPendingURL = environment.SERVER + '/guard/pending/request';
-  confirmedByStudentURL = environment.SERVER + '/guard/request/confirmation/list';
-  confirmedBySupervisorURL = environment.SERVER + '/guard/clean/request/confirmed/';
-  listOfComplaintsURL = environment.SERVER + '/guard/complain/list';
-  complaintResolveURL = environment.SERVER + '/guard/complains/complete?uid=';
+  allPendingURL = environment.SERVER + '/guard/pending/request?token='+localStorage.getItem('supervisor-token');
+  confirmedByStudentURL = environment.SERVER + '/guard/request/confirmation/list?token='+localStorage.getItem('supervisor-token');
+  confirmedBySupervisorURL = environment.SERVER + '/guard/clean/request/confirmed?token='+localStorage.getItem('supervisor-token');
+  listOfComplaintsURL = environment.SERVER + '/guard/complain/list?token='+localStorage.getItem('supervisor-token');
+  complaintResolveURL = environment.SERVER + '/guard/complains/complete?token='+localStorage.getItem('supervisor-token')+'&uid=';
 
   public allPending(): any{
     return this._http.get<any>(this.allPendingURL)

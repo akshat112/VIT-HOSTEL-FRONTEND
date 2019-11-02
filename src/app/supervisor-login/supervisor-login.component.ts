@@ -35,7 +35,9 @@ export class SupervisorLoginComponent implements OnInit {
       this.showSpinner = false;
       if(data.msg == 'OK'){
         localStorage.setItem('supervisor-token',data.data.session)
-        this.router.navigate(['/supervisor/clean/pending']);
+        setTimeout(()=>{
+          this.router.navigate(['/supervisor/clean/pending']);
+        },500)
       }
       else{
         this.showSpinner = false;
