@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class ComplaintsService {
 
   constructor(private _http: HttpClient) { }
-  url = environment.SERVER + '/students/report/complain'
+  url = environment.SERVER + '/students/report/complain?token=' + localStorage.getItem('token');
   postComplaint(data){
     return this._http.post<any>(this.url, data);
   }

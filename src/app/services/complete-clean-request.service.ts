@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 export class CompleteCleanRequestService {
 
   constructor(private _http: HttpClient) { }
-  url = environment.SERVER + "/students/clean/request/complete/";
+  url = environment.SERVER + "/students/clean/request/complete?token=" + localStorage.getItem('token');
   completeClean(data){
     return this._http.post<any>(this.url, data);
   }
