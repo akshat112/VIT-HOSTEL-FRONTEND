@@ -48,12 +48,12 @@ export class PendingCleaningRequestsComponent implements OnInit {
 
     // Completed by student
     this._supervisor.confirmedByStudent().subscribe(
-      data => {
+      dataa => {
         this.showSpinner2 = false;
-        if (data.msg == 'OK') {
+        if (dataa.msg == 'OK' && dataa.data!='no request') {
           this.hasData2 = true;
-          this.completedByStudent = data.data;
-          console.log(data.data);
+          this.completedByStudent = dataa.data;
+          console.log(dataa.data);
         } else {
           this._snackBar.open('Cannot fetch completed requests', 'Ok', {
           duration: 3000
