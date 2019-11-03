@@ -25,7 +25,7 @@ export class MakeRequestComponent implements OnInit {
   tipPaid = false;
   completedMsg = '';
   completeData = {
-    bribe: this.tipPaid
+    bribe: true
   };
 showSpinner = false;
 showSpinner2 = false;
