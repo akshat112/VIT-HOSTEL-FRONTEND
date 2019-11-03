@@ -40,7 +40,7 @@ onSubmit(){
         localStorage.setItem('token',data.data.session)
         setTimeout(() => {
           this.router.navigate(['/cleanRequest']);
-        }, 500)
+        }, 1000)
       }
       else{
         this.showSpinner = false;

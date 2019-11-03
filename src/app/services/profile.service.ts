@@ -8,9 +8,11 @@ import { environment } from 'src/environments/environment';
 export class ProfileService {
 
   constructor(private _http: HttpClient) { }
-    url = environment.SERVER + "/students/profile?token=" + localStorage.getItem('token');
 
-    getProfile(){
+  url = "";
+
+  getProfile(){
+      this.url = environment.SERVER + "/students/profile?token=" + localStorage.getItem('token');
       return this._http.get(this.url);
     }
 

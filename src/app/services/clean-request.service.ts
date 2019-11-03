@@ -6,10 +6,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CleanRequestService {
-
+  url = "";
   constructor(private _http: HttpClient) { }
-  url = environment.SERVER + "/students/clean/request?token=" + localStorage.getItem('token');
   makeCleanRequest(){
+    this.url = environment.SERVER + "/students/clean/request?token=" + localStorage.getItem('token');
     return this._http.get<any>(this.url);
   }
 }
